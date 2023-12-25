@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import "bulma/css/bulma.min.css";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function MainApp({ Component, pageProps }) {
+  return (
+    <Component {...pageProps}></Component>
+  )
 }
 
-export default MyApp
+export default MainApp;

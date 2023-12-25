@@ -1,0 +1,37 @@
+import Layout from 'components/Layout';
+import Navbar from 'components/Navbar'
+import ResourceHighlight from 'components/ResourceHighlight'
+import Newsletter from 'components/Newsletter';
+import ResourceList from 'components/ResourceList';
+import Footer from 'components/Footer';
+
+import { resources } from 'api/data';
+
+
+function Home({ myData1, myData2 }) {
+  return (
+    <Layout>
+      <ResourceHighlight
+        resources={resources.slice(0, 2)}
+      />
+      <Newsletter />
+      <ResourceList
+        resources={resources.slice(2)}
+      />
+
+      <Footer />
+    </Layout>
+  )
+}
+
+export function getStaticProps() {
+  return {
+    props: {
+      myData1: [1, 2, 3],
+      myData2: ["a", "b", "c"]
+    }
+  }
+}
+
+
+export default Home;
